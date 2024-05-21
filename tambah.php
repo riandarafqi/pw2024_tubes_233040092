@@ -24,8 +24,8 @@ if( isset($_POST["submit"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Data Obat</title>
-    <link rel="stylesheet" href="style.css">
 </head>
+<link rel="stylesheet" href="style.css">
 <body>
     <h1>Tambah Data Obat</h1>
     <form action="" method="post">

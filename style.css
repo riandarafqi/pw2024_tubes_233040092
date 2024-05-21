@@ -1,9 +1,14 @@
-            body {
-            font-size: 20px;
-            background-color: lightblue;
-            font-family: arial;
-            margin-left: 50px;
-        }
-        table {
-            background-color: pink;
-        }
+body {
+  font-size: 20px;
+  background-color: lightblue;
+  font-family: arial;
+  margin-left: 50px;
+}
+table {
+  /* margin: 50px auto; */
+  background-color: pink;
+}
+table h1 {
+    /* margin: auto; */
+
+}
