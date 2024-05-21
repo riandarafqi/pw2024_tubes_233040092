@@ -5,10 +5,10 @@ $obat = query("SELECT * FROM obat")
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css.php">
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
+    <!-- <style>
         body {
             font-size: 20px;
             background-color: lightblue;
@@ -18,7 +18,7 @@ $obat = query("SELECT * FROM obat")
         table {
             background-color: pink;
         }
-    </style>
+    </style> -->
     <title>Apotik Rianda</title>
 </head>
 <body>
