@@ -1,5 +1,5 @@
 <?php
-require 'fuction.php';
+require 'functions.php';
 
 $no = $_GET['id'];
 
@@ -13,6 +13,14 @@ $obat = query("SELECT * FROM obat WHERE id = $no");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Obat</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        a {
+            text-decoration: none;
+    }
+    body {
+        line-height:30px;
+    }
+    </style>
 </head>
 <body>
     <h3>Detail Obat</h3>
