@@ -1,6 +1,6 @@
 <?php
 require 'functions.php';
-$obat = query("SELECT * FROM obat ORDER BY id desc")
+$obat = query("SELECT * FROM obat ORDER BY id desc");
 if (isset($_POST["cari"])){
     $obat = cari($_POST["keyword"]);
 }
@@ -36,7 +36,7 @@ if (isset($_POST["cari"])){
         <?php $i = "1"; ?>
         <?php foreach($obat as $obt) : ?>
             <tr>
-                <td><?= $i++ ?></td>
+                <td><?= $i++ ?>.</td>
             <td>
                 <a href="ubah.php?id=<?=$obt["id"];?>">Ubah</a> | 
                 <a href="hapus.php?id=<?= $obt["id"];?>" onclick="return confirm('yakin data dihapus?')">Hapus</a>

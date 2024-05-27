@@ -29,6 +29,7 @@ $obat = query("SELECT * FROM obat WHERE id = $no");
             <li><img src="img/<?= $obt["gambar"]; ?>" height="150"></li>
             <li>Nama Obat :<?= $obt["nama"]; ?></li>
             <li>Harga :<?= $obt["harga"]; ?></li>
+            <li>Kode Barang :<?= $obt["kode_barang"]; ?></li>
             <li>
                 <a href="latihan.php">Kembali ke daftar mahasiswa</a>
             </li>
