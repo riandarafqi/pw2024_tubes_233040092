@@ -26,7 +26,7 @@ if (isset($_POST["cari"])){
     </form>
 
     <h1>Daftar Obat</h1>
-    <table border="1" cellpadding="10" cellspacing="0">
+    <table border="1" cellpadding="10" cellspacing="0" >
         <tr>
             <th>no.</th>
             <th>Aksi</th>

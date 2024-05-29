@@ -30,7 +30,7 @@ if( isset($_POST["submit"])){
 <link rel="stylesheet" href="style.css">
 <body>
     <h1>Ubah Data Obat</h1>
-    <form action="" method="post" enctype="multi-part/form-data">
+    <form action="" method="post" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?= $obt["id"]; ?>">
         <input type="hidden" name="gambarLama" value="<?= $obt["gambar"]; ?>">
         <ul>

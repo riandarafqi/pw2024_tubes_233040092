@@ -30,7 +30,7 @@ function tambah($data){
 }
 
 function upload(){
-    $namaFile = $_FILES['gambar']['name'];
+    $namaFile = $_FILES["gambar"]["name"];
     $ukuranFile = $_FILES['gambar']['size'];
     $error = $_FILES['gambar']['error'];
     $tmpName = $_FILES['gambar']['tmp_name'];
@@ -95,7 +95,6 @@ function ubah($data){
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
-    // $gambar = htmlspecialchars($data["gambar"]);
 
 function cari($keyword){
     $query = "SELECT * FROM obat WHERE 
