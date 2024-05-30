@@ -33,6 +33,13 @@ if (isset($_POST["cari"])){
             <th>Nama</th>
             <th>Detail Obat</th>
         </tr>
+
+        <?php if(empty($obat)): ?>
+        <tr>
+            <td colspan="4"><p style="color:red; font-style:italic;">Data Obat Tidak Ditemukan!</p></td>
+        </tr>
+        <?php endif; ?>
+
         <?php $i = "1"; ?>
         <?php foreach($obat as $obt) : ?>
             <tr>

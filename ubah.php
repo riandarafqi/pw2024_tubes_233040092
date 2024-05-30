@@ -1,5 +1,9 @@
 <?php
 require 'functions.php';
+if(!isset($_GET['id'])){
+    header("Location: latihan.php");
+    exit;
+}
 $id = $_GET["id"];
 $obt = query("SELECT * FROM obat WHERE id = $id")[0];
 if( isset($_POST["submit"])){
@@ -41,15 +45,15 @@ if( isset($_POST["submit"])){
             </li>
             <li>
                 <label for="nama">Nama obat :</label>
-                <input type="text" name="nama" id="nama" value="<?= $obt["nama"]; ?>">
+                <input type="text" name="nama" id="nama" value="<?= $obt["nama"]; ?>" autocomplete="off">
             </li>
             <li>
                 <label for="harga">Harga :</label>
-                <input type="text" name="harga" id="harga" value="<?= $obt["harga"]; ?>">
+                <input type="text" name="harga" id="harga" value="<?= $obt["harga"]; ?>" autocomplete="off">
             </li>
             <li>
                 <label for="kode">Kode Barang :</label>
-                <input type="text" name="kode_barang" id="kode" value="<?= $obt["kode_barang"]; ?>">
+                <input type="text" name="kode_barang" id="kode" value="<?= $obt["kode_barang"]; ?>" autocomplete="off">
             </li>
             <li><button type="submit" name="submit">Ubah</button></li>
         </ul>

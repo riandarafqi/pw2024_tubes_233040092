@@ -52,7 +52,14 @@ function upload(){
         return false;
     }
     
-    if($ukuranFile > 1000000) {
+    if($tipe_file != 'image/jpeg' && $tipe_file != 'image/png') {
+        echo "<script>
+        alert('yang anda upload bukan gambar!');
+        </script>";
+        return false;
+    }
+    
+    if($ukuranFile > 5000000) {
         echo "<script>
         alert('gambar terlalu besar!');
         </script>";

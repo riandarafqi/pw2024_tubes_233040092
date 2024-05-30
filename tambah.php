@@ -36,15 +36,15 @@ if( isset($_POST["submit"])){
             </li>
             <li>
                 <label for="nama">Nama obat :</label>
-                <input type="text" name="nama" id="nama">
+                <input type="text" name="nama" id="nama" autocomplete="off">
             </li>
             <li>
                 <label for="harga">Harga :</label>
-                <input type="text" name="harga" id="harga">
+                <input type="text" name="harga" id="harga" autocomplete="off">
             </li>
             <li>
                 <label for="kode">Kode Barang :</label>
-                <input type="text" name="kode" id="kode">
+                <input type="text" name="kode" id="kode" autocomplete="off">
             </li>
             <li><button type="submit" name="submit">Save</button></li>
         </ul>
