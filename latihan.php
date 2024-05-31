@@ -12,11 +12,6 @@ if (isset($_POST["cari"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apotik Rianda</title>
-    <style>
-        a {
-            text-decoration: none;
-        }
-    </style>
 </head>
 <body>
     <a href="tambah.php">Tambah Data Obat</a>
