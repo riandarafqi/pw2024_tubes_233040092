@@ -36,10 +36,10 @@ function upload(){
     $tmpName = $_FILES['gambar']['tmp_name'];
 
     if($error === 4){
-        echo "<script>
-            alert('pilih gambar terlebih dahulu!');
-        </script>";
-        return false;
+        // echo "<script>
+        //     alert('pilih gambar terlebih dahulu!');
+        // </script>";
+        return 'nophoto.jpg';
     }
     
     $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
@@ -52,12 +52,12 @@ function upload(){
         return false;
     }
     
-    if($tipe_file != 'image/jpeg' && $tipe_file != 'image/png') {
-        echo "<script>
-        alert('yang anda upload bukan gambar!');
-        </script>";
-        return false;
-    }
+    // if($tipe_file != 'img/jpeg' && $tipe_file != 'img/png' && $tipe_file != 'img/jpg') {
+    //     echo "<script>
+    //     alert('yang anda upload bukan gambar!');
+    //     </script>";
+    //     return false;
+    // }
     
     if($ukuranFile > 5000000) {
         echo "<script>
@@ -75,7 +75,11 @@ function upload(){
 
 function hapus($id){
     global $conn;
-    mysqli_query($conn, "DELETE FROM obat WHERE id = $id");
+    $obt = query("SELECT * FROM obat WHERE id = $id");
+    if ($obt["gambar"] != 'nophoto.jpg'){
+        unlink('img/' . $obt["gambar"]);
+    }
+    mysqli_query($conn, "DELETE FROM obat WHERE id = $id") or die(mysqli_error($conn));
     return mysqli_affected_rows($conn);
 }
 

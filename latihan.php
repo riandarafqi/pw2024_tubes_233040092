@@ -21,11 +21,12 @@ if (isset($_POST["cari"])){
 <body>
     <a href="tambah.php">Tambah Data Obat</a>
     <form action="" method="post">
-        <input type="text" name="keyword" size="40"autofocus placeholder="masukan nama obat.." autocomplete="off"> 
-        <button type="sumbit" name="cari" >Cari!</button>
+        <input type="text" name="keyword" size="40"autofocus placeholder="masukan nama obat.." autocomplete="off" id="keyword"> 
+        <button type="sumbit" name="cari" id="tombol-cari">Cari!</button>
     </form>
-
+    
     <h1>Daftar Obat</h1>
+    <div id="container">
     <table border="1" cellpadding="10" cellspacing="0" >
         <tr>
             <th>no.</th>
@@ -39,7 +40,7 @@ if (isset($_POST["cari"])){
             <td colspan="4"><p style="color:red; font-style:italic;">Data Obat Tidak Ditemukan!</p></td>
         </tr>
         <?php endif; ?>
-
+        
         <?php $i = "1"; ?>
         <?php foreach($obat as $obt) : ?>
             <tr>
@@ -55,6 +56,7 @@ if (isset($_POST["cari"])){
         </tr>
         <?php endforeach; ?>
     </table>
-    <br>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

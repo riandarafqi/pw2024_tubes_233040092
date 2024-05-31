@@ -40,8 +40,8 @@ if( isset($_POST["submit"])){
         <ul>
             <li>
                 <label for="gambar">Gambar :</label>
-                <img src="img/<?= $obt['gambar']; ?>" height="150" alt=""><br>
-                <input type="file" name="gambar" id="gambar">
+                <img src="img/<?= $obt['gambar']; ?>" height="150" class="img-preview"><br>
+                <input type="file" name="gambar" id="gambar" class="gambar" onchange="previewImage()">
             </li>
             <li>
                 <label for="nama">Nama obat :</label>
@@ -58,5 +58,6 @@ if( isset($_POST["submit"])){
             <li><button type="submit" name="submit">Ubah</button></li>
         </ul>
     </form>
+    <script src="script.js"></script>
 </body>
 </html>

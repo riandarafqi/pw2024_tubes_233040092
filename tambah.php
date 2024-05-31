@@ -31,8 +31,10 @@ if( isset($_POST["submit"])){
     <form action="" method="post" enctype="multipart/form-data">
         <ul>
             <li>
-                <label for="gambar">Gambar :</label>
-                <input type="file" name="gambar" id="gambar">
+                <label for="gambar">Gambar :
+                    <input type="file" name="gambar" id="gambar" class="gambar" onchange="previewImage()">
+                </label>
+                <img src="img/nophoto.jpg" width="120" style="display: block" class="img-preview">
             </li>
             <li>
                 <label for="nama">Nama obat :</label>
@@ -49,5 +51,6 @@ if( isset($_POST["submit"])){
             <li><button type="submit" name="submit">Save</button></li>
         </ul>
     </form>
+    <script src="script.js"></script>
 </body>
 </html>
