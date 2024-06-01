@@ -30,6 +30,6 @@ keyword.addEventListener('keyup', function(){
     }
 
     // eksekusi ajax
-    xhr.open('GET', 'ajax/coba.txt', tue);
+    xhr.open('GET', 'ajax/obat.php?keyword=' + keyword.value, true);
     xhr.send();
 })
