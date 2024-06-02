@@ -117,22 +117,63 @@ function cari($keyword){
     return query($query);
 }
 
+
 function login($data){
     global $conn;
     $username = htmlspecialchars($data['username']);
     $password = htmlspecialchars($data['password']);
 
-    if($user = query("SELECT * FROM user WHERE username = '$username'")){
-        if(password_verify($password, $user['password'])){
-        $_SESSION['login'] = true;
-        header("Location: latihan.php");
-        exit;
-    }}
-        return [
-            'error' => true,
-            'pesan' => 'Username / Password Salah!'
-        ];
+    // Mulai sesi jika belum dimulai
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
     }
+
+    // Persiapkan pernyataan SQL
+    $stmt = $conn->prepare("SELECT * FROM user WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    // Cek apakah pengguna ada
+    if($result->num_rows === 1) {
+        $user = $result->fetch_assoc();
+
+        // Pastikan password tidak null sebelum memanggil password_verify
+        if ($user && isset($user['password']) && $user['password']) {
+            // Verifikasi password
+            if(password_verify($password, $user['password'])){
+                $_SESSION['login'] = true;
+                header("Location: latihan.php");
+                exit;
+            }
+        }
+    }
+
+    return [
+        'error' => true,
+        'pesan' => 'Username / Password Salah!'
+    ];
+}
+
+
+// function login($data){
+//     global $conn;
+//     $username = htmlspecialchars($data['username']);
+//     $password = htmlspecialchars($data['password']);
+
+//     if($user = query("SELECT * FROM user WHERE username = '$username'")){
+//         if(password_verify($password, $user['password'])){
+//         $_SESSION['login'] = true;
+//         header("Location: latihan.php");
+//         exit;
+//         }
+//     }
+//         return [
+//             'error' => true,
+//             'pesan' => 'Username / Password Salah!'
+//         ];
+//     }
+
 
 function registrasi($data){
     global $conn;
