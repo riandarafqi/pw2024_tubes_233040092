@@ -1,6 +1,9 @@
 <?php
 require 'functions.php';
-
+if(!isset($_GET['id'])){
+    header("Location: latihan.php");
+    exit;
+}
 $no = $_GET['id'];
 
 $obat = query("SELECT * FROM obat WHERE id = $no");

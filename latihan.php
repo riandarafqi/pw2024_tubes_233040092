@@ -1,4 +1,9 @@
 <?php
+session_start();
+if(!isset($_SESSION['login'])){
+    header("Location: login.php");
+    exit;
+}
 require 'functions.php';
 $obat = query("SELECT * FROM obat ORDER BY id desc");
 if (isset($_POST["cari"])){
@@ -14,6 +19,7 @@ if (isset($_POST["cari"])){
     <title>Apotik Rianda</title>
 </head>
 <body>
+    <a href="logout.php">Logout</a><br><br>
     <a href="tambah.php">Tambah Data Obat</a>
     <form action="" method="post">
         <input type="text" name="keyword" size="40"autofocus placeholder="masukan nama obat.." autocomplete="off" id="keyword"> 

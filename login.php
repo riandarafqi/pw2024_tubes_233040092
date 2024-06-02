@@ -1,7 +1,12 @@
 <?php
+session_start();
+if(isset($_SESSION['login'])){
+    header("Location: latihan.php");
+    exit;
+}
 require 'functions.php';
 if(isset($_POST['login'])){
-    login($_POST);
+    $login = login($_POST);
 }
 ?>
 <!DOCTYPE html>
@@ -13,6 +18,9 @@ if(isset($_POST['login'])){
 </head>
 <body>
     <h3>Form Login</h3>
+    <?php if(isset($login['error'])) : ?>
+        <p style="color:red; font-style:italic"><?= $login['pesan']; ?></p>
+    <?php endif; ?>
     <form action="" method="POST">
 
     <ul>
@@ -30,6 +38,9 @@ if(isset($_POST['login'])){
         </li>
         <li>
             <button type="submit" name="login">Login</button>
+        </li>
+        <li>
+            <a href="registrasi.php">Daftar</a>
         </li>
     </ul>
 

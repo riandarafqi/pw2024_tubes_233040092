@@ -1,5 +1,9 @@
 <?php
 require 'functions.php';
+if(!isset($_GET['id'])){
+    header("Location: latihan.php");
+    exit;
+}
 if( isset($_POST["submit"])){
     if(tambah($_POST) > 0){
         echo "

@@ -118,18 +118,66 @@ function cari($keyword){
 }
 
 function login($data){
-    $conn = koneksi();
+    global $conn;
     $username = htmlspecialchars($data['username']);
-    $password = htmlspecialchars($data['username']);
+    $password = htmlspecialchars($data['password']);
 
-    if($username == 'admin' && $password == '12345'){
-        header("location: latihan.php");
+    if($user = query("SELECT * FROM user WHERE username = '$username'")){
+        if(password_verify($password, $user['password'])){
+        $_SESSION['login'] = true;
+        header("Location: latihan.php");
         exit;
-    } else {
+    }}
         return [
             'error' => true,
             'pesan' => 'Username / Password Salah!'
         ];
     }
+
+function registrasi($data){
+    global $conn;
+    $username = htmlspecialchars(strtolower($data['username']));
+    $password1 = mysqli_real_escape_string($conn, $data['password1']);
+    $password2 = mysqli_real_escape_string($conn, $data['password2']);
+
+    if(empty($username) || empty($password1) || empty($password2)){
+        echo "<script>
+                alert('username / password tidak boleh kosong!');
+            <script>";
+            return false;
+        }
+        
+        if(query("SELECT * FROM user WHERE username = '$username'")){
+        echo "<script>
+                alert('username sudah terdaftar!');
+                document.location.href = 'registrasi.php';
+            </script>";
+            return false;
+            
+        }
+        if($password1 !== $password2) {
+            echo "<script>
+                    alert('konfirmasi password tidak sesuai!');
+                    document.location.href = 'registrasi.php';
+                    </>";
+                    return false;
+                }
+
+
+        if(strlen($password1) < 5){
+                echo "<script>
+                    alert('password terlalu pendek!');
+                    document.location.href = 'registrasi.php';
+                </script>";
+            return false;
+            
+        }
+
+        $password_baru = password_hash($password1, PASSWORD_DEFAULT);
+
+        $query = "INSERT INTO user VALUES (null, '$username', '$password_baru')";
+
+        mysqli_query($conn,$query) or die(mysqli_error($conn));
+        return mysqli_affected_rows($conn);
 }
 ?>
