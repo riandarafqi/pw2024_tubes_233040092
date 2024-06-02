@@ -116,4 +116,20 @@ function cari($keyword){
                 ";
     return query($query);
 }
+
+function login($data){
+    $conn = koneksi();
+    $username = htmlspecialchars($data['username']);
+    $password = htmlspecialchars($data['username']);
+
+    if($username == 'admin' && $password == '12345'){
+        header("location: latihan.php");
+        exit;
+    } else {
+        return [
+            'error' => true,
+            'pesan' => 'Username / Password Salah!'
+        ];
+    }
+}
 ?>
