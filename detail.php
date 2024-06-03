@@ -15,29 +15,22 @@ $obat = query("SELECT * FROM obat WHERE id = $no");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Obat</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        a {
-            text-decoration: none;
-    }
-    body {
-        line-height:30px;
-    }
-    </style>
+    <link rel="stylesheet" href="css/detail-style.css">
 </head>
 <body>
-    <h3>Detail Obat</h3>
+    <h1>Detail Obat</h1>
+    <form>
+        <div class="detail-obat">
         <?php foreach($obat as $obt) : ?>
         <ul>
             <li><img src="img/<?= $obt["gambar"]; ?>" height="150"></li>
             <li>Nama Obat :<?= $obt["nama"]; ?></li>
             <li>Harga :<?= $obt["harga"]; ?></li>
             <li>Kode Barang :<?= $obt["kode_barang"]; ?></li>
-            <li>
-                <a href="latihan.php">Kembali ke daftar mahasiswa</a>
-            </li>
         </ul>
         <?php endforeach; ?>
-    </table>
+        </div>
+        <button><a href="latihan.php">Kembali ke daftar mahasiswa</a></button>
+    </form>
 </body>
 </html>
