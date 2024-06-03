@@ -19,22 +19,33 @@ if (isset($_POST["cari"])){
     <title>Apotik Rianda</title>
 </head>
 <body>
-    <a href="logout.php">Logout</a><br><br>
-    <a href="tambah.php">Tambah Data Obat</a>
-    <form action="" method="post">
-        <input type="text" name="keyword" size="40"autofocus placeholder="masukan nama obat.." autocomplete="off" id="keyword"> 
-        <button type="sumbit" name="cari" id="tombol-cari">Cari!</button>
-    </form>
-    
+    <header>
+        <div class="logo">
+            <img src="logo.png">
+        </div>
+            <div class="buttons">
+                <button><a href="logout.php">Logout</a></button>
+                <button><a href="tambah.php">Tambah Data Obat</a></button>
+        </div>
+    </header>
+    <div class="container">
     <h1>Daftar Obat</h1>
+    <form action="" method="post">
+    <div class="search-bar">
+            <input type="text" name="keyword" size="40" placeholder="masukan nama obat.." autocomplete="off" id="keyword"> 
+            <button type="submit" name="cari" id="tombol-cari">Cari!</button>
+        </div>
+    </form>
     <div id="container">
-    <table border="1" cellpadding="10" cellspacing="0" >
+    <table>
+        <thead>
         <tr>
             <th>no.</th>
             <th>Aksi</th>
             <th>Nama</th>
             <th>Detail Obat</th>
         </tr>
+        </thead>
 
         <?php if(empty($obat)): ?>
         <tr>
@@ -57,6 +68,7 @@ if (isset($_POST["cari"])){
         </tr>
         <?php endforeach; ?>
     </table>
+    </div>
     </div>
     <script src="script.js"></script>
 </body>
