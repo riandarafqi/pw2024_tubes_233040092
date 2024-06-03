@@ -31,7 +31,7 @@ if( isset($_POST["submit"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ubah Data Obat</title>
 </head>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/ubah.css">
 <body>
     <h1>Ubah Data Obat</h1>
     <form action="" method="post" enctype="multipart/form-data">

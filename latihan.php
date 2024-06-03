@@ -33,7 +33,7 @@ if (isset($_POST["cari"])){
     <form action="" method="post">
     <div class="search-bar">
             <input type="text" name="keyword" size="40" placeholder="masukan nama obat.." autocomplete="off" id="keyword"> 
-            <button type="submit" name="cari" id="tombol-cari">Cari!</button>
+            <button type="submit" name="cari" id="tombol-cari"><img src="cari.png" alt=""></button>
         </div>
     </form>
     <div id="container">
