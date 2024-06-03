@@ -143,7 +143,8 @@ function login($data){
             // Verifikasi password
             if(password_verify($password, $user['password'])){
                 $_SESSION['login'] = true;
-                header("Location: latihan.php");
+                header("Location: index
+                .php");
                 exit;
             }
         }

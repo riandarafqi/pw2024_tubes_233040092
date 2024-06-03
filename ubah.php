@@ -1,7 +1,7 @@
 <?php
 require 'functions.php';
 if(!isset($_GET['id'])){
-    header("Location: latihan.php");
+    header("Location: index.php");
     exit;
 }
 $id = $_GET["id"];
@@ -11,14 +11,14 @@ if( isset($_POST["submit"])){
         echo "
             <script>
             alert('data berhasil diubah!');
-            document.location.href= 'latihan.php';
+            document.location.href= 'index.php';
             </script>
         ";
     } else {
         echo "
             <script>
             alert('data berhasil diubah!');
-            document.location.href= 'latihan.php';
+            document.location.href= 'index.php';
             </script>
         ";
     }

@@ -28,11 +28,11 @@ if(isset($_POST['login'])){
         
         <div class="input-group">
             <label>Username</label>
-            <Input type="text" name="username" autofocus autocomplete="off" required>
+            <Input type="text" name="username" autofocus autocomplete="off">
         </div>
         <div class="input-group">
             <label>Password</label>
-            <Input type="password" name="password" required>
+            <Input type="password" name="password">
         </div>
         <div class="button-group">
             <button type="submit" name="login">Login</button>

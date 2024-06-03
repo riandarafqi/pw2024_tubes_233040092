@@ -1,7 +1,7 @@
 <?php
 require 'functions.php';
 if(!isset($_GET['id'])){
-    header("Location: latihan.php");
+    header("Location: index.php");
     exit;
 }
 $no = $_GET['id'];
@@ -30,7 +30,7 @@ $obat = query("SELECT * FROM obat WHERE id = $no");
         </ul>
         <?php endforeach; ?>
         </div>
-        <button><a href="latihan.php">Kembali ke daftar mahasiswa</a></button>
+        <button><a href="index.php">Kembali ke daftar mahasiswa</a></button>
     </form>
 </body>
 </html>
