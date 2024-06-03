@@ -15,5 +15,56 @@ body {
     max-width: 400px;
 }
 .login-box {
-    
+    background-color: #cbffcd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+.login-box h1 {
+    text-align: center;
+    color: #0d7151;
+    margin-bottom: 20px;
+}
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #0d7151;
+}
+.input-group input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+.button-group button {
+    background-color: #0d7151;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin-bottom: 10px;
+}
+.button-group button:hover {
+    background-color: #0b5a43;
+}
+.button-group button a {
+    color: white;
+    text-decoration: none;
 }

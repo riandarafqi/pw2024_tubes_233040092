@@ -18,33 +18,29 @@ if(isset($_POST['login'])){
     <link rel="stylesheet" href="login-style.css">
 </head>
 <body>
-    <h3>Form Login</h3>
-    <?php if(isset($login['error'])) : ?>
-        <p style="color:red; font-style:italic"><?= $login['pesan']; ?></p>
-    <?php endif; ?>
-    <form action="" method="POST">
-
-    <ul>
-        <li>
-            <label>
-                Username :
-                <Input type="text" name="username" autofocus autocomplete="off" required>
-            </label>
-        </li>
-        <li>
-            <label>
-                Password :
-                <Input type="password" name="password" required>
-            </label>
-        </li>
-        <li>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Login</h1>
+                    <?php if(isset($login['error'])) : ?>
+                        <p style="color:red; font-style:italic"><?= $login['pesan']; ?></p>
+                    <?php endif; ?>
+        <form action="" method="POST">
+        
+        <div class="input-group">
+            <label>Username</label>
+            <Input type="text" name="username" autofocus autocomplete="off" required>
+        </div>
+        <div class="input-group">
+            <label>Password</label>
+            <Input type="password" name="password" required>
+        </div>
+        <div class="button-group">
             <button type="submit" name="login">Login</button>
-        </li>
-        <li>
-            <a href="registrasi.php">Daftar</a>
-        </li>
-    </ul>
+            <button><a href="registrasi.php">Daftar</a></button>
+        </div>
 
-    </form>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

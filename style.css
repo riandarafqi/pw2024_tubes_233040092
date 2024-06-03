@@ -90,3 +90,7 @@ body {
   table tr:last-child{
     border-bottom: none;
   }
+  .container table tr td a {
+    color: black;
+    text-decoration: none;
+  }

@@ -26,7 +26,7 @@ if (isset($_POST["cari"])){
             <div class="buttons">
                 <button><a href="logout.php">Logout</a></button>
                 <button><a href="tambah.php">Tambah Data Obat</a></button>
-        </div>
+            </div>
     </header>
     <div class="container">
     <h1>Daftar Obat</h1>
