@@ -1,5 +1,6 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "pw2024_tubes_233040092");
+$conn = mysqli_connect("localhost", "id22262514_apotekrafqi", "Mikayla1234_", "id22262514_pw2024_tubes_233040092");
 
 function query($query){
     // $conn = koneksi();
@@ -124,6 +125,7 @@ function login($data){
     $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
 
     if($username === 'AdminApotek' && $password === 'admin123'){
+        $_SESSION['login'] = true;
         header("Location: admin.php");
     }
 

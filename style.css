@@ -30,8 +30,8 @@ body {
     text-decoration: none;
   }
   .container {
-    width: 50%;
-    max-width: 1200px;
+    /* width: 50%; */
+    max-width: 450px;
     margin: 0 auto;
   }
   h1 {

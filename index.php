@@ -25,7 +25,6 @@ if (isset($_POST["cari"])){
         </div>
             <div class="buttons">
                 <button><a href="logout.php">Logout</a></button>
-                <button><a href="tambah.php">Tambah Data Obat</a></button>
             </div>
     </header>
     <div class="container">
@@ -41,7 +40,6 @@ if (isset($_POST["cari"])){
         <thead>
         <tr>
             <th>no.</th>
-            <th>Aksi</th>
             <th>Nama</th>
             <th>Detail Obat</th>
         </tr>
@@ -57,10 +55,6 @@ if (isset($_POST["cari"])){
         <?php foreach($obat as $obt) : ?>
             <tr>
                 <td><?= $i++ ?>.</td>
-            <td>
-                <a href="ubah.php?id=<?=$obt["id"];?>">Ubah</a> | 
-                <a href="hapus.php?id=<?= $obt["id"];?>" onclick="return confirm('yakin data dihapus?')">Hapus</a>
-            </td>
             <td><?= $obt["nama"]; ?></td>
             <td>
                 <a href="detail.php?id=<?= $obt["id"]; ?>">lihat detail</a>
