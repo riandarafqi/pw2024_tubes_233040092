@@ -1,6 +1,5 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "pw2024_tubes_233040092");
-$conn = mysqli_connect("localhost", "id22262514_apotekrafqi", "Mikayla1234_", "id22262514_pw2024_tubes_233040092");
 
 function query($query){
     // $conn = koneksi();
